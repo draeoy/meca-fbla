@@ -5,13 +5,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MECA FBLA</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0;background:#f6f8fb;color:#111}
-    .wrap{max-width:900px;margin:28px auto;padding:20px}
-    header{display:flex;align-items:center;gap:16px}
-    h1{margin:0;color:#0b6ef6}
-    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(10,15,25,0.05);margin-top:16px}
-    a.button{display:inline-block;padding:8px 12px;background:#0b6ef6;color:#fff;border-radius:8px;text-decoration:none}
-    footer{margin-top:20px;color:#666;font-size:14px}
+    :root{--accent:#0b6ef6;--bg:#f6f8fb;--card:#fff;--muted:#666}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0;background:var(--bg);color:#111}
+    .wrap{max-width:1000px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    h1{margin:0;color:var(--accent)}
+    nav{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+    a.button{display:inline-block;padding:8px 12px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(10,15,25,0.05);margin-top:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
+    ul{margin:8px 0 0 20px}
+    footer{margin-top:20px;color:var(--muted);font-size:14px;text-align:center;padding-bottom:24px}
+    .muted{color:var(--muted);font-size:14px}
+    .small{font-size:13px;color:var(--muted)}
+    .qr{max-width:120px;border-radius:8px;display:block;margin-top:8px}
+    @media(min-width:900px){nav{gap:12px}}
   </style>
 </head>
 <body>
@@ -19,27 +27,77 @@
     <header>
       <div>
         <h1>MECA FBLA</h1>
-        <div>Leadership • Competitions • Career skills</div>
+        <div class="small">Leadership • Competitions • Career skills</div>
       </div>
-      <div style="margin-left:auto">
+
+      <nav>
+        <a class="small" href="#vision">Vision</a>
+        <a class="small" href="#resources">Resources</a>
+        <a class="small" href="#officers">Next President</a>
         <a class="button" href="#join">Join</a>
-      </div>
+      </nav>
     </header>
 
-    <section class="card">
+    <section class="card" id="meeting">
       <h2>Next meeting</h2>
-      <p><strong>Date & Time:</strong> Every first Thursday of each month • <strong>Place:</strong> ROOM 15 </p>
-      <p>We are an approved chapter but still need active members. Come learn officer roles, fundraising, and how you can get leadership experience and competition prep :) </p>
-      <p><a href="[GOOGLE_FORM_LINK]" class="button">Sign up / Google Form</a> — or scan the QR on flyers.</p>
+      <p><strong>Date & Time:</strong> Every first Thursday of each month • <strong>Place:</strong> ROOM 15</p>
+      <p>We are an approved chapter but still need active members. Come learn officer roles, fundraising, and how you can get leadership experience and competition prep :)</p>
+      <p>
+        <a href=" " class="button" id="join">Sign up / Google Form</a>
+         or scan the QR on flyers.
+      </p>
+      <img src="assets/qr-signup.png" alt="QR to sign up" class="qr" onerror="this.style.display='none'">
     </section>
+
+    <div class="grid">
+      <section class="card" id="vision">
+        <h3>Vision</h3>
+        <p style="margin-top:6px">
+          We build leaders who actually do stuff and not just talk. MECA FBLA teaches real skills, such as projects, pitches, and teamwork, which gets us into competitions and scholarships, and hands leadership to the next person stronger than we found it. Join if you want to learn, lead, and leave a legacy.
+        </p>
+        <p class="small">Short, practical, no-fluff — that’s how we run things.</p>
+      </section>
+
+      <section class="card" id="resources">
+        <h3>Resources</h3>
+        <p class="small" style="margin:6px 0 10px 0">Quick links and downloadable templates — replace the placeholders with the actual files/links in your repo / Drive.</p>
+        <ul>
+          <li><strong>Google Classroom:</strong> <a href="https://classroom.google.com/c/ODEwNTQxMjM3OTUy" target="_blank" rel="noopener">Join our Classroom</a> (link placeholder)</li>
+          <li><strong>Sign-up Form:</strong> <a href="" target="_blank" rel="noopener">Google Form (sign-up)</a></li>
+          <li><strong>Officer Playbooks (PDF):</strong> President • Treasurer • Secretary — <a href="/assets/playbooks/president.pdf">download</a> (placeholders)</li>
+          <li><strong>Budget Template:</strong> <a href="/assets/templates/budget.csv">budget.csv</a> — Google Sheets friendly</li>
+          <li><strong>Meeting & Agenda Templates:</strong> <a href="/assets/templates/agenda.docx">agenda.docx</a> / <a href="/assets/templates/minutes.docx">minutes.docx</a></li>
+          <li><strong>Fundraiser Toolkit:</strong> permission form, flyer templates, receipt log — <a href="/assets/toolkit/fundraising.zip">download</a></li>
+          <li><strong>FBLA info:</strong> <a href="https://www.fbla-pbl.org/" target="_blank" rel="noopener">FBLA National</a> • <a href="#" target="_blank" rel="noopener">California FBLA (state page)</a></li>
+        </ul>
+        <p class="small" style="margin-top:10px"></p>
+      </section>
+
+      <section class="card" id="officers">
+        <h3>Next President</h3>
+        <p class="small" style="margin-bottom:8px">Short list :)</p>
+        <ul>
+          <li><strong>Run monthly meetings:</strong> use the agenda template, post minutes within 48 hours.</li>
+          <li><strong>Work with advisor (Mr. Reyes):</strong> confirm ASB rules, bank/signature process, and permission forms.</li>
+          <li><strong>Recruit & train eBoard:</strong> confirm President, VP (Membership), VP (Competitions), Treasurer, Secretary — shadow for 2–4 weeks.</li>
+          <li><strong>Oversee budget:</strong> approve expenses, review the budget sheet monthly with Treasurer.</li>
+          <li><strong>Plan calendar:</strong> publish a Fall/Spring timeline and key competition dates on the site.</li>
+          <li><strong>Handoff packet:</strong> collect passwords (stored safely), links, contacts, and a one-paragraph "state of the club".</li>
+        </ul>
+        <p class="small" style="margin-top:8px"></p>
+      </section>
+    </div>
 
     <section class="card">
       <h3>Contact</h3>
-      <p>Advisor: Mr. Reyes • Email: patrick.reyes@wcusd.org </p>
-      <p>Club lead: Ethan Tran • <em> We're looking for president & eBoard to take over next year </em></p>
+      <p><strong>Advisor:</strong> Mr. Reyes • Email: <a href="mailto:patrick.reyes@wcusd.org">patrick.reyes@wcusd.org</a></p>
+      <p><strong>Club lead:</strong> Ethan Tran • Email: <a href="mailto:fblameca@gmail.com">fblameca@gmail.com</a></p>
+      <p class="muted">Follow us on Instagram: <a href="https://instagram.com/fblameca" target="_blank" rel="noopener">@fblameca</a></p>
     </section>
 
-    <footer>MECA FBLA — follow us on Instagram: [@fblameca] • Questions? Email the advisor.</footer>
+    <footer>
+      MECA FBLA building skills, winning competitions, and creating the next generation of leaders. © MECA FBLA
+    </footer>
   </div>
 </body>
 </html>
